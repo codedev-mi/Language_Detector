@@ -1,44 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>🤟 Sign Language Detection</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Language Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <div class="container">
-    <h1>🤟 Real-Time Sign Language Detection</h1>
-    <p class="subtitle">AI-powered gesture recognition that converts sign language into text</p>
 
-    <div class="video-card">
-      <div class="video-wrapper">
-        <img id="video" src="" alt="Video Stream">
-      </div>
+    <div class="container">
 
-      <div class="control-buttons">
-        <button id="startBtn" class="btn start">Start</button>
-        <button id="stopBtn" class="btn stop">Stop</button>
-        <button id="clearBtn" class="btn clear">Clear</button>
-      </div>
+        <h1>🤟 Real-Time Sign Language Detection</h1>
 
-      <div class="output">
-        <div class="live-letter">
-          <h3>📡 Current Letter:</h3>
-          <p id="currentLetter">-</p>
+        <p class="subtitle">
+            AI-powered gesture recognition that converts
+            sign language into text
+        </p>
+
+        <div class="video-card">
+
+            <div class="video-wrapper">
+
+                <video id="video"
+                       autoplay
+                       playsinline
+                       muted>
+                </video>
+
+                <canvas id="canvas" hidden></canvas>
+
+            </div>
+
+            <div id="status" class="status">
+                Camera is not started
+            </div>
+
+            <div class="control-buttons">
+
+                <button id="startBtn"
+                        class="btn start">
+                    Start
+                </button>
+
+                <button id="stopBtn"
+                        class="btn stop">
+                    Stop
+                </button>
+
+                <button id="clearBtn"
+                        class="btn clear">
+                    Clear
+                </button>
+
+            </div>
+
+            <div class="output">
+
+                <div class="live-letter">
+
+                    <h3>📡 Current Letter</h3>
+
+                    <p id="currentLetter">-</p>
+
+                    <p id="confidence">
+                        Confidence: -
+                    </p>
+
+                </div>
+
+                <div class="sentence-box">
+
+                    <h3>📝 Predicted Sentence</h3>
+
+                    <p id="sentence"></p>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="sentence-box">
-          <h3>📝 Predicted Sentence:</h3>
-          <p id="sentence"></p>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <footer>
-    <p>Developed with ❤️ using Flask, TensorFlow & MediaPipe</p>
-  </footer>
+    <footer>
 
-  <script src="/static/js/main.js"></script>
+        <p>
+            Developed with ❤️ using Flask,
+            TensorFlow, OpenCV & MediaPipe
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
+
 </html>
