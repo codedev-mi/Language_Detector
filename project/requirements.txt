@@ -1,7 +1,8 @@
-Flask
-tensorflow
-opencv-python
-numpy
-pandas
-matplotlib
-gunicorn
+Flask==3.0.3
+tensorflow==2.15.1
+mediapipe==0.10.11
+opencv-python-headless==4.9.0.80
+numpy==1.26.4
+joblib==1.4.2
+scikit-learn==1.4.2
+gunicorn==22.0.0
