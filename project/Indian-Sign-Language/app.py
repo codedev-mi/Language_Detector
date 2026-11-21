@@ -35,7 +35,10 @@ ENCODER_PATH = os.path.join(
 
 print("Loading sign language model...")
 
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(
+    MODEL_PATH,
+    compile=False
+)
 le = joblib.load(ENCODER_PATH)
 
 print("Model loaded successfully!")
